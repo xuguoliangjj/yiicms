@@ -1,4 +1,4 @@
-Yii 2 Advanced Application Template
+基于Yii2的CMS开源系统
 ===================================
 
 Yii 2 Advanced Application Template is a skeleton Yii 2 application best for
@@ -11,7 +11,7 @@ The template is designed to work in a team development environment. It supports
 deploying the application in different environments.
 
 
-DIRECTORY STRUCTURE
+目录结构
 -------------------
 
 ```
