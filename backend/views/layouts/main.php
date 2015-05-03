@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\Menu;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -51,15 +52,37 @@ AppAsset::register($this);
         ?>
 
         <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            'homeLink' => [
-                  'label' => '首页',  // required
-                  'url' => '/',      // optional, will be processed by Url::to()
-                  'template' => "<li>{link}</li>\n", // optional, if not set $this->itemTemplate will be used
-              ]
-        ]) ?>
-        <?= $content ?>
+        <div class="row">
+           <div class="col-xs-12 col-sm-3">
+                <?= Menu::widget([
+                    'options'=>['class'=>'','id'=>'main-menu'],
+                    'itemOptions'=>['class'=>''],
+                    'submenuTemplate'=>"\n<ul>\n{items}\n</ul>\n",
+                    'items' => [
+                        // Important: you need to specify url as 'controller/action',
+                        // not just as 'controller' even if default action is used.
+                        ['label' => '主页', 'url' => ['site/index']],
+                        // 'Products' menu item will be selected as long as the route is 'product/index'
+                        ['label' => '产品', 'url' => ['product/index'], 'items' => [
+                            ['label' => '新产品', 'url' => ['product/index', 'tag' => 'new']],
+                            ['label' => '流行产品', 'url' => ['product/index', 'tag' => 'popular']],
+                        ]],
+                        ['label' => '新闻中心', 'url' => ['site/login']],
+                    ],
+                ]);?>
+           </div>
+           <div class="col-xs-12 col-sm-9">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                'homeLink' => [
+                      'label' => '首页',  // required
+                      'url' => '/',      // optional, will be processed by Url::to()
+                      'template' => "<li>{link}</li>\n", // optional, if not set $this->itemTemplate will be used
+                  ]
+            ]) ?>
+            <?= $content ?>
+            </div>
+        </div>
         </div>
     </div>
 
