@@ -1,15 +1,8 @@
 基于Yii2的CMS开源系统
 ===================================
 
-Yii 2 Advanced Application Template is a skeleton Yii 2 application best for
-developing complex Web applications with multiple tiers.
-
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
-
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
-
+希望可以帮助更多的人学习Yii，也希望以后减少自己的重复工作，希望可以和大家一起交流
+不断的完善这个CMS
 
 目录结构
 -------------------
@@ -52,7 +45,7 @@ tests                    contains various tests for the advanced application
 REQUIREMENTS
 ------------
 
-The minimum requirement by this application template that your Web server supports PHP 5.4.0.
+最低支持PHP5.4
 
 
 安装
