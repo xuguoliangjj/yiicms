@@ -46,7 +46,7 @@ AppAsset::register($this);
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
+        'items' => $this ->context -> topMenu,
     ]);
     NavBar::end();
     ?>
@@ -57,18 +57,8 @@ AppAsset::register($this);
                 <nav class="sidebar-nav">
                     <?= Menu::widget([
                         'options'=>["id"=>"menu"],
-                        'linkTemplate'=>'<a href="{url}">{label}</a>',
-                        'items' => [
-                            // Important: you need to specify url as 'controller/action',
-                            // not just as 'controller' even if default action is used.
-                            ['label' => '主页', 'url' => ['site/index']],
-                            // 'Products' menu item will be selected as long as the route is 'product/index'
-                            ['label' => '产品', 'url' => ['product/index'],'items' => [
-                                ['label' => '新产品', 'url' => ['product/index']],
-                                ['label' => '流行产品', 'url' => ['product/index']],
-                            ]],
-                            ['label' => '新闻中心', 'url' => ['site/login']],
-                        ],
+                        'linkTemplate'=>'<a href="{url}">{label}</a>',  //<i class="glyphicon glyphicon-chevron-left pull-right"></i>
+                        'items' => $this ->context -> leftMenu
                     ]);?>
                 </nav>
             </div>
