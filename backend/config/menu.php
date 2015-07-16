@@ -8,7 +8,7 @@
 
 return [
     'menu'=>[
-        'fronted'=> ['label'=>'前台管理','url'=>['site/index'], 'items'=>[
+        'fronted'=> ['label'=>'前台管理','items'=>[
                 ['label' => '主页', 'url' => ['#'],'items' => [
                     ['label' => '新产品1', 'url' => ['site/index']],
                     ['label' => '流行产品1', 'url' => ['product/index2']],
@@ -24,7 +24,7 @@ return [
             ]
         ],
 
-        'setting'=> ['label'=>'系统设置','url'=>['site/setting'], 'items'=>[
+        'setting'=> ['label'=>'系统设置', 'items'=>[
                 ['label' => '系统设置', 'url' => ['#'],'items' => [
                     ['label' => '系统设置1', 'url' => ['site/setting']],
                     ['label' => '系统设置2', 'url' => ['cc/cc']],

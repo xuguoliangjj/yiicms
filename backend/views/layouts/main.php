@@ -26,15 +26,12 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'Yii CMS',
+        'brandLabel' => '首页',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    $menuItems = [
-        ['label' => '首页', 'url' => ['/site/index']],
-    ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
     } else {
@@ -45,8 +42,12 @@ AppAsset::register($this);
         ];
     }
     echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-left'],
+        'items' => $this -> context -> topMenu,
+    ]);
+    echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $this ->context -> topMenu,
+        'items' => $menuItems,
     ]);
     NavBar::end();
     ?>

@@ -10,8 +10,8 @@ use Yii;
 use yii\web\Controller;
 class BaseController extends Controller
 {
-    public $topMenu;
-    public $leftMenu;
+    public $topMenu;    //顶部菜单
+    public $leftMenu;   //左侧二级菜单
     public function beforeAction($action)
     {
         $menus = Yii::$app->params['menu'];
@@ -20,6 +20,8 @@ class BaseController extends Controller
         if(isset($menus[$activeTag]['items']))
         {
             $this -> leftMenu = $menus[$activeTag]['items'];
+        }else{
+            $this -> leftMenu  = [];
         }
         foreach($menus as $key => $items)
         {
@@ -38,16 +40,25 @@ class BaseController extends Controller
     {
         foreach($menus as $i => $items)
         {
+            $firstUrl = '';
             foreach($items['items'] as $k => $item)
             {
-                foreach($item['items'] as $l => $menu)
-                {
-                    if(stripos($this -> route,$menu['url'][0]) === 0)
-                    {
-                        $activeTag = $i;
+                if(!empty($item['items'])) {
+                    foreach ($item['items'] as $l => $menu) {
+                        if($firstUrl == '')
+                        {
+                            $firstUrl = $menu['url'][0];                      //获取第一个url
+                        }
+                        if (stripos($this->route, $menu['url'][0]) === 0) {   //找出当前路由在哪个菜单下
+                            $activeTag = $i;
+                        }
                     }
+                }else{
+                    unset($menus[$i]['items'][$k]);  //删除没有子菜单的菜单
+                    continue;
                 }
             }
+            $menus[$i]['url'] = [$firstUrl];
         }
         return $menus;
     }
