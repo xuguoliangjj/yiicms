@@ -1,5 +1,7 @@
 $(function(){
-    $("#menu").metisMenu();
+    $("#menu").metisMenu({
+        toggle: false
+    });
     $("#menu li a").click(function(){
         var ihand = $(this).find("i");
         if(ihand.hasClass("glyphicon-chevron-left"))

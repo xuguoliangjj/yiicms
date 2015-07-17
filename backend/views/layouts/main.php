@@ -26,10 +26,11 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => '首页',
+        'brandLabel' => '后台管理系统',
         'brandUrl' => Yii::$app->homeUrl,
+        'innerContainerOptions'=>['class'=>'container-fluid'],
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-inverse navbar-static-top own-navbar-top',
         ],
     ]);
     if (Yii::$app->user->isGuest) {
@@ -41,10 +42,13 @@ AppAsset::register($this);
             'linkOptions' => ['data-method' => 'post']
         ];
     }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-left'],
-        'items' => $this -> context -> topMenu,
-    ]);
+    if(!Yii::$app->user->isGuest) {
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-left'],
+            'items' => $this->context->topMenu,
+        ]);
+    }
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
@@ -52,9 +56,29 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container">
+    <div class="container-fluid own-container-fluid">
+        <div class="row hidden-xs">
+            <div class="col-xs-12 col-sm-3 own-search-bar">
+                <div class="input-group input-group" style="padding:10px;">
+                    <input type="text" class="form-control" placeholder="搜索......" aria-describedby="sizing-addon1">
+                    <span class="input-group-addon btn" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+                <?= Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    'options' => ['class' => 'breadcrumb','style'=>'margin:13px 0px 0px;'],
+                    'homeLink' => [
+                        'label' => '首页',  // required
+                        'url' => '/',      // optional, will be processed by Url::to()
+                        'template' => "<li>{link}</li>\n", // optional, if not set $this->itemTemplate will be used
+                    ]
+                ]) ?>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-3">
+            <div class="col-xs-12 col-sm-3 own-menu-bar">
+                <?php if (!Yii::$app->user->isGuest):?>
                 <nav class="sidebar-nav">
                     <?= Menu::widget([
                         'options'=>["id"=>"menu"],
@@ -62,19 +86,9 @@ AppAsset::register($this);
                         'items' => $this ->context -> leftMenu
                     ]);?>
                 </nav>
+                <?php endif;?>
             </div>
-            <script>
-
-            </script>
             <div class="col-xs-12 col-sm-9">
-                <?= Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    'homeLink' => [
-                        'label' => '首页',  // required
-                        'url' => '/',      // optional, will be processed by Url::to()
-                        'template' => "<li>{link}</li>\n", // optional, if not set $this->itemTemplate will be used
-                    ]
-                ]) ?>
                 <?= $content ?>
             </div>
         </div>

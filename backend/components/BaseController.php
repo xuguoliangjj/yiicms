@@ -14,6 +14,10 @@ class BaseController extends Controller
     public $leftMenu;   //左侧二级菜单
     public function beforeAction($action)
     {
+        if(Yii::$app->user->isGuest && $this->route != 'site/login')
+        {
+            $this ->redirect(['/site/login']);
+        }
         $menus = Yii::$app->params['menu'];
         $activeTag = '';
         $menus = $this -> normalizeMenu($menus,$activeTag);

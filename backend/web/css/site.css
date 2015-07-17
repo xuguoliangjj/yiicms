@@ -11,7 +11,7 @@ body {
 }
 
 .wrap > .container {
-    padding: 70px 15px 20px;
+
 }
 
 .footer {
@@ -88,4 +88,18 @@ a.desc:after {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
+}
+
+.own-navbar-top{
+    margin-bottom: 0px;
+}
+
+
+
+.own-search-bar{
+    background: rgb(34, 34, 34) none repeat scroll 0% 0%;
+}
+
+.own-menu-bar,.own-search-bar{
+    padding: 0px;
 }
