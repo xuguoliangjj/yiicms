@@ -26,7 +26,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => '后台管理系统',
+        'brandLabel' => 'CMS后台管理系统',
         'brandUrl' => Yii::$app->homeUrl,
         'innerContainerOptions'=>['class'=>'container-fluid'],
         'options' => [
@@ -57,27 +57,29 @@ AppAsset::register($this);
     ?>
 
     <div class="container-fluid own-container-fluid">
-        <div class="row hidden-xs">
-            <div class="col-xs-12 col-sm-3 own-search-bar">
-                <div class="input-group input-group" style="padding:10px;">
-                    <input type="text" class="form-control" placeholder="搜索......" aria-describedby="sizing-addon1">
-                    <span class="input-group-addon btn" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+        <?php if (!Yii::$app->user->isGuest):?>
+            <div class="row hidden-xs">
+                <div class="col-xs-12 col-sm-2 own-search-bar">
+                    <div class="input-group input-group" style="padding:10px;">
+                        <input type="text" class="form-control" placeholder="搜索......" aria-describedby="sizing-addon1">
+                        <span class="input-group-addon btn" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-10">
+                    <?= Breadcrumbs::widget([
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                        'options' => ['class' => 'breadcrumb','style'=>'margin:13px 0px 0px;'],
+                        'homeLink' => [
+                            'label' => '首页',  // required
+                            'url' => '/',      // optional, will be processed by Url::to()
+                            'template' => "<li>{link}</li>\n", // optional, if not set $this->itemTemplate will be used
+                        ]
+                    ]) ?>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-9">
-                <?= Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    'options' => ['class' => 'breadcrumb','style'=>'margin:13px 0px 0px;'],
-                    'homeLink' => [
-                        'label' => '首页',  // required
-                        'url' => '/',      // optional, will be processed by Url::to()
-                        'template' => "<li>{link}</li>\n", // optional, if not set $this->itemTemplate will be used
-                    ]
-                ]) ?>
-            </div>
-        </div>
+        <?php endif;?>
         <div class="row">
-            <div class="col-xs-12 col-sm-3 own-menu-bar">
+            <div class="col-xs-12 col-sm-2 own-menu-bar">
                 <?php if (!Yii::$app->user->isGuest):?>
                 <nav class="sidebar-nav">
                     <?= Menu::widget([
@@ -88,7 +90,7 @@ AppAsset::register($this);
                 </nav>
                 <?php endif;?>
             </div>
-            <div class="col-xs-12 col-sm-9">
+            <div class="col-xs-12 col-sm-10">
                 <?= $content ?>
             </div>
         </div>

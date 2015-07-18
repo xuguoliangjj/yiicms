@@ -10,11 +10,11 @@ return [
     'menu'=>[
         'fronted'=> ['label'=>'前台管理','items'=>[
                 ['label' => '主页', 'url' => ['#'],'items' => [
-                    ['label' => '新产品1', 'url' => ['site/index']],
-                    ['label' => '流行产品1', 'url' => ['product/index2']],
+                    ['label' => '主页', 'url' => ['site/index']],
+                    ['label' => '关于', 'url' => ['site/about2222']],
                 ]],
-                ['label' => '产品', 'url' => ['product/index'],'items' => [
-                    ['label' => '新产品2', 'url' => ['product/index']],
+                ['label' => '产品', 'url' => ['#'],'items' => [
+                    ['label' => '新产品2', 'url' => ['site/about']],
                     ['label' => '流行产品2', 'url' => ['product/index4']],
                 ]],
                 ['label' => '新闻中心', 'url' => ['site/login'],'items' => [
