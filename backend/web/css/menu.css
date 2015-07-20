@@ -61,3 +61,10 @@
     padding-right: 5px;
 }
 
+#menu ul .active{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#menu ul .active a{
+    color: white;
+}
