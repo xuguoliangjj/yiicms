@@ -54,8 +54,6 @@ class BaseController extends Controller
                             $firstUrl = $menu['url'][0];                      //获取第一个url
                         }
                         if (stripos($this->route, $menu['url'][0]) === 0) {   //找出当前路由在哪个菜单下
-                            $menus[$i]['items'][$k]['active']=true;
-                            $menus[$i]['active']=true;
                             $activeTag = $i;
                         }
                     }

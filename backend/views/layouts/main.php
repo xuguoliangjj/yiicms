@@ -82,6 +82,7 @@ AppAsset::register($this);
                 <nav class="sidebar-nav">
                     <?= Menu::widget([
                         'options'=>["id"=>"menu"],
+                        'activateParents'=>true,
                         'linkTemplate'=>'<a href="{url}">{label}</a>',  //<i class="glyphicon glyphicon-chevron-left pull-right"></i>
                         'items' => $this ->context -> leftMenu
                     ]);?>
