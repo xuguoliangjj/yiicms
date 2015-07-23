@@ -57,6 +57,7 @@ AppAsset::register($this);
     ?>
 
     <div class="container-fluid own-container-fluid">
+        <?php if(!Yii::$app->user->isGuest):?>
         <div class="row hidden-xs">
             <div class="col-xs-12 col-sm-2 own-search-bar">
                 <div class="input-group input-group" style="padding:10px;">
@@ -76,12 +77,14 @@ AppAsset::register($this);
                 ]) ?>
             </div>
         </div>
+        <?php endif;?>
         <div class="row">
             <div class="col-xs-12 col-sm-2 own-menu-bar">
                 <?php if (!Yii::$app->user->isGuest):?>
                 <nav class="sidebar-nav">
                     <?= Menu::widget([
-                        'options'=>["id"=>"menu"],
+                        'options'=>["id"=>"menu","class"=>'metismenu '],
+                        'encodeLabels'=>false,
                         'activateParents'=>true,
                         'linkTemplate'=>'<a href="{url}">{label}</a>',  //<i class="glyphicon glyphicon-chevron-left pull-right"></i>
                         'items' => $this ->context -> leftMenu
