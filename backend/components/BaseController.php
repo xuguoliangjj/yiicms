@@ -65,6 +65,7 @@ class BaseController extends Controller
                         }
                         $iconClass = isset($menu['icon']) ? $menu['icon'] : $this->defaultIcon;
                         $menus[$i]['items'][$k]['items'][$l]['label'] = $this->buildMenusLabel($menu['label'], $iconClass);
+                        unset($menus[$i]['items'][$k]['items'][$l]['icon']);
                     }
                 }else{
                     unset($menus[$i]['items'][$k]);  //删除没有子菜单的菜单
@@ -73,6 +74,7 @@ class BaseController extends Controller
                 $menus[$i]['items'][$k]['url'] = ['#'];
                 $iconClass = isset($item['icon']) ? $item['icon'] : $this->defaultIcon;
                 $menus[$i]['items'][$k]['label'] = $this -> buildItemsLabel($item['label'],$iconClass);
+                unset($menus[$i]['items'][$k]['icon']);
             }
             $menus[$i]['url'] = [$firstUrl];
         }
