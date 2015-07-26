@@ -101,3 +101,7 @@ a.desc:after {
 .own-menu-bar,.own-search-bar{
     padding: 0px;
 }
+
+.own-menu-bar{
+    background: #222;
+}

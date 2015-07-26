@@ -1,10 +1,7 @@
 <?php
 use backend\assets\AppAsset;
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use yii\widgets\Menu;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -24,40 +21,9 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 <div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => '后台管理系统',
-        'brandUrl' => Yii::$app->homeUrl,
-        'innerContainerOptions'=>['class'=>'container-fluid'],
-        'options' => [
-            'class' => 'navbar-inverse navbar-static-top own-navbar-top',
-        ],
-    ]);
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = [
-            'label' => '注销 (' . Yii::$app->user->identity->username . ')',
-            'url' => ['/site/logout'],
-            'linkOptions' => ['data-method' => 'post']
-        ];
-    }
-    if(!Yii::$app->user->isGuest) {
-        echo Nav::widget([
-            'options' => ['class' => 'navbar-nav navbar-left'],
-            'items' => $this->context->topMenu,
-        ]);
-    }
-
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
-
+    <?=$this -> context -> renderPartial('@backend/views/layouts/_top');?>
     <div class="container-fluid own-container-fluid">
-        <?php if(!Yii::$app->user->isGuest):?>
+        <?php if(!Yii::$app->user->isGuest && !empty($this ->context -> leftMenu)):?>
         <div class="row hidden-xs">
             <div class="col-xs-12 col-sm-2 own-search-bar">
                 <div class="input-group input-group" style="padding:10px;">
@@ -80,17 +46,9 @@ AppAsset::register($this);
         <?php endif;?>
         <div class="row">
             <div class="col-xs-12 col-sm-2 own-menu-bar">
-                <?php if (!Yii::$app->user->isGuest):?>
-                <nav class="sidebar-nav">
-                    <?= Menu::widget([
-                        'options'=>["id"=>"menu","class"=>'metismenu '],
-                        'encodeLabels'=>false,
-                        'activateParents'=>true,
-                        'linkTemplate'=>'<a href="{url}">{label}</a>',  //<i class="glyphicon glyphicon-chevron-left pull-right"></i>
-                        'items' => $this ->context -> leftMenu
-                    ]);?>
-                </nav>
-                <?php endif;?>
+            <?php if (!Yii::$app->user->isGuest):?>
+                <?=$this -> context -> renderPartial('@backend/views/layouts/_left');?>
+            <?php endif;?>
             </div>
             <div class="col-xs-12 col-sm-10">
                 <?= $content ?>

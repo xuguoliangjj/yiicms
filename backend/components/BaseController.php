@@ -60,10 +60,9 @@ class BaseController extends Controller
                         {
                             $firstUrl = $menu['url'][0];                      //获取第一个url
                         }
-                        if (stripos($this->route, $menu['url'][0]) === 0) {   //找出当前路由在哪个菜单下
-                            $menus[$i]['active'] = true;
-                            $menus[$i]['items'][$k]['active'] = true;
+                        if (stripos($this->route, trim($menu['url'][0],'/')) === 0) {   //找出当前路由在哪个菜单下
                             $activeTag = $i;
+                            $menus[$i]['active']=true;
                         }
                         $iconClass = isset($menu['icon']) ? $menu['icon'] : $this->defaultIcon;
                         $menus[$i]['items'][$k]['items'][$l]['label'] = $this->buildMenusLabel($menu['label'], $iconClass);
@@ -80,7 +79,6 @@ class BaseController extends Controller
             }
             $menus[$i]['url'] = [$firstUrl];
         }
-
 
         return $menus;
     }

@@ -3,7 +3,6 @@ namespace backend\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use yii\web\Controller;
 use common\models\LoginForm;
 use yii\filters\VerbFilter;
 use backend\components\BaseController;
@@ -13,6 +12,7 @@ use backend\components\BaseController;
  */
 class SiteController extends BaseController
 {
+    public $layout='full';
     /**
      * @inheritdoc
      */
@@ -64,10 +64,6 @@ class SiteController extends BaseController
         return $this -> render('about');
     }
 
-    public function actionSetting()
-    {
-        return $this->render('setting');
-    }
 
     public function actionLogin()
     {
