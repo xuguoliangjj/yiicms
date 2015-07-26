@@ -9,15 +9,15 @@
 return [
     'menu'=>[
         'fronted'=> ['label'=>'前台管理','items'=>[
-                ['label' => '主页', 'url' => ['#'],'items' => [
-                    ['label' => '主页', 'url' => ['site/index']],
-                    ['label' => '关于', 'url' => ['site/about2222']],
+                ['icon'=>'glyphicon glyphicon-home','label' => '主页','items' => [
+                    ['label' => '新产品1', 'url' => ['site/index']],
+                    ['label' => '流行产品1', 'url' => ['product/index2']],
                 ]],
-                ['label' => '产品', 'url' => ['#'],'items' => [
-                    ['label' => '新产品2', 'url' => ['site/about']],
+                ['icon'=>'glyphicon glyphicon-tag','label' => '产品','items' => [
+                    ['label' => '新产品2', 'url' => ['product/index']],
                     ['label' => '流行产品2', 'url' => ['product/index4']],
                 ]],
-                ['label' => '新闻中心', 'url' => ['site/login'],'items' => [
+                ['icon'=>'glyphicon glyphicon-folder-close','label' => '新闻中心','items' => [
                     ['label' => '新产品3', 'url' => ['product/index5']],
                     ['label' => '流行产品3', 'url' => ['product/index6']],
                 ]],
@@ -25,11 +25,12 @@ return [
         ],
 
         'setting'=> ['label'=>'系统设置', 'items'=>[
-                ['label' => '系统设置', 'url' => ['#'],'items' => [
+                ['icon'=>'glyphicon glyphicon-cog','label' => '系统设置','items' => [
                     ['label' => '系统设置1', 'url' => ['site/setting']],
                     ['label' => '系统设置2', 'url' => ['cc/cc']],
                 ]]
             ]
         ]
+
     ]
 ];
