@@ -91,7 +91,7 @@ class BaseController extends Controller
     private function buildItemsLabel($label,$iconClass)
     {
         $label = $this -> buildMenusLabel($label,$iconClass)
-        .Html::beginTag('span',['class'=>'glyphicon arrow']).Html::endTag('span');
+        .Html::tag('span','',['class'=>'glyphicon arrow']);
         return $label;
     }
 
@@ -103,7 +103,7 @@ class BaseController extends Controller
     private function buildMenusLabel($label,$iconClass)
     {
         if($this -> activeIcon) {
-            $label = Html::beginTag('span', ['class' => $iconClass]) . "&nbsp;" . Html::endTag('span')
+            $label = Html::tag('span',"&nbsp;",['class' => $iconClass])
                 . $label;
         }
         return $label;

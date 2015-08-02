@@ -66,4 +66,13 @@ return array (
       '@mdm/admin' => $vendorDir . '/mdmsoft/yii2-admin',
     ),
   ),
+    'xuguoliangjj/yii2-editorgridview' =>
+    array (
+        'name' => 'xuguoliangjj/yii2-editorgridview',
+        'version' => '0.1',
+        'alias' =>
+            array (
+                '@xuguoliangjj/editorgridview' => $vendorDir . '/xuguoliangjj/yii2-editorgridview',
+            ),
+    ),
 );
