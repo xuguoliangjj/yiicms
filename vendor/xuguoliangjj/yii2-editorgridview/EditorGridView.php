@@ -19,6 +19,13 @@ class EditorGridView extends GridView
     public $tableOptions = ["class"=>"table table-striped table-bordered table-condensed","cellspacing"=>"0", "width"=>"100%"];
 
     public $options = ['class'=>'table-responsive grid-view'];
+
+    public function init()
+    {
+        $this -> dataColumnClass = EditorDataColumn::className();
+        parent::init();
+    }
+
     public function run()
     {
         $id = $this->options['id'];
@@ -77,9 +84,75 @@ class EditorGridView extends GridView
         }
     }
 
-    public function init()
+    /**
+     * Renders the data models for the grid view.
+     */
+    public function renderItems()
     {
-        $this -> dataColumnClass = EditorDataColumn::className();
-        parent::init();
+        $filter = $this->renderFilters();            //筛选过滤
+        $caption = $this->renderCaption();
+        $columnGroup = $this->renderColumnGroup();
+        $tableHeader = $this->showHeader ? $this->renderTableHeader() : false;
+        $tableBody = $this->renderTableBody();
+        $tableFooter = $this->showFooter ? $this->renderTableFooter() : false;
+        $content = array_filter([
+            $caption,
+            $columnGroup,
+            $tableHeader,
+            $tableFooter,
+            $tableBody,
+        ]);
+
+        return $filter.Html::tag('table', implode("\n", $content), $this->tableOptions);
+    }
+
+    /**
+     * Renders the table header.
+     * @return string the rendering result.
+     */
+    public function renderTableHeader()
+    {
+        $cells = [];
+        foreach ($this->columns as $column) {
+            /* @var $column Column */
+            $cells[] = $column->renderHeaderCell();
+        }
+        $content = Html::tag('tr', implode('', $cells), $this->headerRowOptions);
+
+        return "<thead>\n" . $content . "\n</thead>";
+    }
+
+    /**
+     * Renders the table footer.
+     * @return string the rendering result.
+     */
+    public function renderTableFooter()
+    {
+        $cells = [];
+        foreach ($this->columns as $column) {
+            /* @var $column Column */
+            $cells[] = $column->renderFooterCell();
+        }
+        $content = Html::tag('tr', implode('', $cells), $this->footerRowOptions);
+
+        return "<tfoot>\n" . $content . "\n</tfoot>";
+    }
+
+    /**
+     * Renders the filter.
+     * @return string the rendering result.
+     */
+    public function renderFilters()
+    {
+        if ($this->filterModel !== null) {
+            $cells = [];
+            foreach ($this->columns as $column) {
+                /* @var $column Column */
+                $cells[] = $column->renderFilterCell();
+            }
+            return Html::tag('div', implode('', $cells), $this->filterRowOptions);
+        } else {
+            return '';
+        }
     }
 }

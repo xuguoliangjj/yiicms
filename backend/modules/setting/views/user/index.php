@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     ];
                 }],'value'=>function($model,$key,$index,$column){
                     return date('Y-m-d',$model->created_at);
-                }],
+                },'filter'=>true],
                 ['attribute'=>'updated_at','label'=>'修改时间','value'=>function($model){return $model->updated_at;}],
                 ['class' => 'yii\grid\ActionColumn']
             ]

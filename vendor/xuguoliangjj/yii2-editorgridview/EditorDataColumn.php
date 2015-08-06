@@ -22,6 +22,7 @@ class EditorDataColumn extends DataColumn
      */
     public $editable = [];
 
+    public $filterOptions = ['class'=>'form-group'];
     /**
      * @inheritdoc
      * @param mixed $model
@@ -81,5 +82,16 @@ class EditorDataColumn extends DataColumn
        {
            $columns['data-title'] = $model->getAttributeLabel($this->attribute);
        }
+    }
+
+    /**
+     * Renders the filter cell.
+     */
+    public function renderFilterCell()
+    {
+        if($this->filter) {
+            return Html::tag('label',$this->label).Html::tag('div', $this->renderFilterCellContent(), $this->filterOptions);
+        }else
+            return null;
     }
 }
