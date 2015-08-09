@@ -5,8 +5,9 @@
  * Date: 2015/8/2
  * Time: 12:48
  */
-namespace common\models\search\UserSearch;
+namespace common\models\search;
 use \yii\db\ActiveRecord;
+use yii\data\ActiveDataProvider;
 class UserSearch extends ActiveRecord
 {
     /**
@@ -23,9 +24,34 @@ class UserSearch extends ActiveRecord
     public function rules()
     {
         return [
-            ['username','min'=>2,'max'=>'255'],
-            ['email','email'],
-            //['created_at,updated_at',''],
+            [['username','email'],'required'],
+            [['created_at','updated_at'],'integer'],
+            ['email','email']
         ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'username' => '用户名',
+            'email' => '邮箱'
+        ];
+    }
+
+    public function search($params)
+    {
+        $query = UserSearch::find();
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+        if (!$this->load($params)) {
+            return $dataProvider;
+        }
+        $query->andFilterWhere(['like', 'username', $this->username]);
+        return $dataProvider;
     }
 }

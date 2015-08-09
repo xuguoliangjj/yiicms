@@ -11,13 +11,15 @@ use yii\web\AssetBundle;
 
 class EditorGridViewAsset extends AssetBundle
 {
-    public $sourcePath = '@xuguoliangjj/editorgridview/assets/bootstrap3-editable';
+    public $sourcePath = '@xuguoliangjj/editorgridview/assets';
 
     public $css = [
-        'css/bootstrap-editable.css'
+        'bootstrap3-editable/css/bootstrap-editable.css',
+        'admin.css'
     ];
     public $js = [
-        'js/bootstrap-editable.js'
+        'bootstrap3-editable/js/bootstrap-editable.js',
+        'admin.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

@@ -6,7 +6,6 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
-use yii\data\ActiveDataProvider;
 
 /**
  * User model
@@ -35,15 +34,6 @@ class User extends ActiveRecord implements IdentityInterface
         return '{{%user}}';
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'username' => '用户名'
-        ];
-    }
 
     /**
      * @inheritdoc
@@ -62,7 +52,8 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             ['username','required'],
-            ['created_at','integer'],
+            [['created_at','updated_at'],'integer'],
+            ['email','email'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
@@ -197,19 +188,5 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
-    }
-
-    public function search()
-    {
-        $query = User::find();
-
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
-
-
-
-        $query->andFilterWhere(['like', 'memail', $this->username]);
-        return $dataProvider;
     }
 }

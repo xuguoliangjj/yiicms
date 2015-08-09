@@ -10,7 +10,7 @@ return [
     'menu'=>[
         'fronted'=> ['label'=>'前台管理','items'=>[
                 ['icon'=>'glyphicon glyphicon-home','label' => '主页','items' => [
-                    ['label' => '新产品1', 'url' => ['/main/default/index']],
+                    ['label' => '新产品1', 'url' => ['/main/default']],
                     ['label' => '流行产品1', 'url' => ['/product/index2']],
                 ]],
                 ['icon'=>'glyphicon glyphicon-tag','label' => '产品','items' => [
@@ -26,8 +26,8 @@ return [
 
         'setting'=> ['label'=>'系统设置', 'items'=>[
                 ['icon'=>'glyphicon glyphicon-cog','label' => '系统设置','items' => [
-                    ['label' => '用户', 'url' => ['/setting/user/index']],
-                    ['label' => '系统设置2', 'url' => ['cc/cc']],
+                    ['label' => '用户管理', 'url' => ['/setting/user']],
+                    ['label' => '角色管理', 'url' => ['/setting/roles']],
                 ]]
             ]
         ]

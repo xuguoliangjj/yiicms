@@ -1,0 +1,6 @@
+.grid-view .filters{
+    margin-bottom: 15px;
+}
+.grid-view .filters input,.grid-view .filters select{
+    margin-right: 5px;
+}

@@ -42,6 +42,15 @@ class BaseController extends Controller
         return true;
     }
 
+    //判断是否当前url
+    private function isItemActive($item){
+        if(stripos($this->route,trim($item['url'][0],'/')) === 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     /**
      * @param $menus
      * @param $activeTag
@@ -60,9 +69,17 @@ class BaseController extends Controller
                         {
                             $firstUrl = $menu['url'][0];                      //获取第一个url
                         }
-                        if (stripos($this->route, trim($menu['url'][0],'/')) === 0) {   //找出当前路由在哪个菜单下
+                        if (stripos($this->route,trim($menu['url'][0],'/')) === 0) {   //找出当前路由在哪个菜单下
                             $activeTag = $i;
                             $menus[$i]['active']=true;
+                        }
+                        if(!isset($menus[$i]['items'][$k]['active']))
+                        {
+                            if($this->isItemActive($menu))
+                            {
+                                $menus[$i]['items'][$k]['active']=true;
+                                $menus[$i]['items'][$k]['items'][$l]['active']=true;
+                            }
                         }
                         $iconClass = isset($menu['icon']) ? $menu['icon'] : $this->defaultIcon;
                         $menus[$i]['items'][$k]['items'][$l]['label'] = $this->buildMenusLabel($menu['label'], $iconClass);

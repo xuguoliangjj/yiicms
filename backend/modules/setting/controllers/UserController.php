@@ -3,7 +3,7 @@
 namespace backend\modules\setting\controllers;
 
 use \backend\components\BaseController;
-use common\models\User;
+use common\models\search\UserSearch;
 use yii\helpers\Json;
 use Yii;
 
@@ -12,8 +12,8 @@ class UserController extends BaseController
 {
     public function actionIndex()
     {
-        $model = new User();
-        $dataProvider = $model -> search();
+        $model = new UserSearch();
+        $dataProvider = $model -> search(Yii::$app->request->get());
         return $this->render('index',[
             'dataProvider'=>$dataProvider,
             'model'=>$model
@@ -25,7 +25,7 @@ class UserController extends BaseController
      */
     public function actionChangeName($pk)
     {
-        $model = User::findOne($pk);
+        $model = UserSearch::findOne($pk);
         if($model)
         {
             $model->load(Yii::$app->request->get());
@@ -46,7 +46,7 @@ class UserController extends BaseController
      */
     public function actionChangeTime($pk)
     {
-        $model = User::findOne($pk);
+        $model = UserSearch::findOne($pk);
         if($model)
         {
             $model->load(Yii::$app->request->get());
