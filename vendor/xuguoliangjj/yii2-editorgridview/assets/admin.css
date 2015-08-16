@@ -4,3 +4,11 @@
 .grid-view .filters input,.grid-view .filters select{
     margin-right: 5px;
 }
+.grid-view .pagination{
+    margin:0px;
+    float: right;
+}
+.grid-view .grid-button{
+    margin-bottom: 10px;
+    margin-top: -5px;
+}

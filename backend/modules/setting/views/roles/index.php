@@ -12,6 +12,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'dataProvider'=>$dataProvider,
                 'filterModel'=>$model,
                 'summary'=>'',
+                'buttons'=>[
+                    \yii\helpers\Html::a('添加角色',['/setting/roles/create'],['class'=>'btn btn-sm btn-primary']),
+                ],
                 'columns'=>[
                     ['attribute'=>'name','label'=>'名称','filter'=>true],
                     ['attribute'=>'description','label'=>'简述'],
@@ -24,5 +27,4 @@ $this->params['breadcrumbs'][] = $this->title;
             ?>
         </div>
     </div>
-
 <?php \yii\widgets\Pjax::end(); ?>

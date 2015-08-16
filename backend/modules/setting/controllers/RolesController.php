@@ -18,6 +18,11 @@ class RolesController extends BaseController
         ]);
     }
 
+    public function actionCreate()
+    {
+        return $this->render('create');
+    }
+
     public function actionView($id)
     {
         return $this->render('view');

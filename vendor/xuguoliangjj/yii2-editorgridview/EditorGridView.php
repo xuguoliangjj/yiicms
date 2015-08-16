@@ -33,11 +33,19 @@ class EditorGridView extends GridView
      * @inheritdoc
      */
     public $filterErrorOptions = ['class' => ''];
+
+    public $buttonOptions = ['class'=>'grid-button'];
     /**
      * @var array
      * 搜索发生的错误
      */
     public $filterErrors = [];
+
+    /**
+     * @var按钮
+     */
+    public $buttons = [];
+
     public function init()
     {
         $this -> dataColumnClass = EditorDataColumn::className();
@@ -108,7 +116,7 @@ class EditorGridView extends GridView
      */
     public function renderItems()
     {
-
+        $button = $this->renderTableButtons();
         $caption = $this->renderCaption();
         $columnGroup = $this->renderColumnGroup();
         $tableHeader = $this->showHeader ? $this->renderTableHeader() : false;
@@ -123,7 +131,22 @@ class EditorGridView extends GridView
             $tableBody,
         ]);
         $table = Html::tag('table', implode("\n", $content), $this->tableOptions);
-        return $filter.Html::tag('div',$table,$this->outerTableOptions);
+        return $button.$filter.Html::tag('div',$table,$this->outerTableOptions);
+    }
+
+    /*
+     * 添加表格按钮
+     */
+    public function renderTableButtons()
+    {
+        if(!empty($this->buttons)) {
+            $content = Html::beginTag('div',$this->buttonOptions);
+            $content .= Html::tag('div', implode('', $this->buttons), ['class' => 'btn-group', 'role' => 'group']);
+            $content .= Html::endTag('div');
+            return $content;
+        }
+        else
+            return $this->emptyCell;
     }
 
     /**

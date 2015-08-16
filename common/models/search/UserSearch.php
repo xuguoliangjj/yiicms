@@ -47,6 +47,9 @@ class UserSearch extends ActiveRecord
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination'=>[
+                'pageSize'=>1
+            ]
         ]);
         if (!$this->load($params)) {
             return $dataProvider;

@@ -10,11 +10,14 @@ $this->params['breadcrumbs'][] = $this->title;
         echo \xuguoliangjj\editorgridview\EditorGridView::widget([
             'dataProvider'=>$dataProvider,
             'filterModel'=>$model,
+            'buttons'=>[
+                \yii\helpers\Html::a('添加用户',['/setting/user'],['class'=>'btn btn-sm btn-primary'])
+            ],
             'summary'=>'',
             'columns'=>[
                 ['class' => 'yii\grid\CheckboxColumn'],
                 ['attribute'=>'id','label'=>'序列'],
-                //<a href="#" id="username" data-type="text" data-pk="1" data-url="/post" data-title="Enter username">superuser</a>
+
                 ['attribute'=>'username','format'=>'raw','editable'=>['editor',function($model){
                     return [
                         'data-type'=>'text',
