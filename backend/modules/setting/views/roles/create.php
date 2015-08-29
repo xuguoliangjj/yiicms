@@ -17,6 +17,11 @@ $this->params['breadcrumbs'] = \backend\components\Tools::buildBreadcrumbs($this
     <div class="panel-body">
     <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
+        <?= $form->field($model, 'name') ?>
+        <?= $form->field($model, 'description')->textarea()?>
+        <?= $form->field($model, 'ruleName') ?>
+        <?= $form->field($model, 'data')->textarea()?>
+
     <div class="form-group">
         <?= Html::submitButton('添加', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
     </div>

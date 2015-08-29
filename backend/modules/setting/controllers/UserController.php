@@ -3,7 +3,8 @@
 namespace backend\modules\setting\controllers;
 
 use \backend\components\BaseController;
-use common\models\search\UserSearch;
+use common\models\searchs\UserSearch;
+use common\models\User;
 use yii\helpers\Json;
 use Yii;
 
@@ -51,6 +52,7 @@ class UserController extends BaseController
         {
             $model->load(Yii::$app->request->get());
             $model->created_at = strtotime($model->created_at);
+
             if($model->update())
             {
                 echo Json::encode(array('status' => 'success'));

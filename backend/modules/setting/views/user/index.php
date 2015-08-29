@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'data-url'=>\yii\helpers\Url::to(['/setting/user/change-time'])
                     ];
                 }],'value'=>function($model){
-                    return Yii::$app->formatter->asDate($model->updated_at,'php:Y-m-d');
+                    return Yii::$app->formatter->asDate($model->created_at,'php:Y-m-d');
                 }, 'filter'=>true],
                 ['attribute'=>'updated_at','label'=>'修改时间','value'=>function($model){
                     return Yii::$app->formatter->asDate($model->updated_at,'php:Y-m-d');

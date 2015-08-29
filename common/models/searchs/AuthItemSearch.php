@@ -1,6 +1,6 @@
 <?php
 
-namespace common\models\search;
+namespace common\models\searchs;
 use yii\base\Model;
 use yii\data\ArrayDataProvider;
 use Yii;
@@ -10,7 +10,7 @@ use Yii;
  * Date: 2015/8/9
  * Time: 16:23
  */
-class RolesSearch extends Model
+class AuthItemSearch extends Model
 {
     public $type;
     public $name;

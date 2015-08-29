@@ -5,7 +5,7 @@
  * Date: 2015/8/2
  * Time: 12:48
  */
-namespace common\models\search;
+namespace common\models\searchs;
 use \yii\db\ActiveRecord;
 use yii\data\ActiveDataProvider;
 class UserSearch extends ActiveRecord
@@ -48,7 +48,7 @@ class UserSearch extends ActiveRecord
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination'=>[
-                'pageSize'=>1
+                'pageSize'=>2
             ]
         ]);
         if (!$this->load($params)) {
