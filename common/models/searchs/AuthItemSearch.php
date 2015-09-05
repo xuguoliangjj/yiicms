@@ -4,6 +4,8 @@ namespace common\models\searchs;
 use yii\base\Model;
 use yii\data\ArrayDataProvider;
 use Yii;
+use yii\rbac\Item;
+
 /**
  * Created by PhpStorm.
  * User: lenovo
@@ -42,15 +44,32 @@ class AuthItemSearch extends Model
     public function search($params)
     {
         $auth = Yii::$app->authManager;
-        $roles = $auth->getRoles();
+        if($this->type == Item::TYPE_ROLE) {
+            $items = $auth->getRoles();
+        }else{
+            $items = [];
+            if ($this->type == Item::TYPE_PERMISSION) {
+                foreach ($auth->getPermissions() as $name => $item) {
+                    if ($name[0] !== '/') {
+                        $items[$name] = $item;
+                    }
+                }
+            } else {
+                foreach ($auth->getPermissions() as $name => $item) {
+                    if ($name[0] === '/') {
+                        $items[$name] = $item;
+                    }
+                }
+            }
+        }
         if($this->load($params)) {
             $name = strtolower(trim($this->name));
-            $roles = array_filter($roles, function ($role) use ($name){
+            $items = array_filter($items, function ($role) use ($name){
                 return (empty($name) || strpos((strtolower($role->name)),$name) != false);
             });
         }
         return new ArrayDataProvider([
-            'allModels'=>$roles
+            'allModels'=>$items
         ]);
     }
 }

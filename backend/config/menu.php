@@ -25,9 +25,12 @@ return [
         ],
 
         'setting'=> ['label'=>'系统设置', 'items'=>[
-                ['icon'=>'glyphicon glyphicon-cog','label' => '系统设置','items' => [
+                ['icon'=>'glyphicon glyphicon-user','label' => '权限管理','items' => [
                     ['label' => '用户管理', 'url' => ['/setting/user']],
                     ['label' => '角色管理', 'url' => ['/setting/roles']],
+                    ['label' => '权限列表', 'url' => ['/setting/permission']],
+                    ['label' => '路由列表', 'url' => ['/setting/route']],
+                    ['label' => '规则列表', 'url' => ['/setting/rule']],
                 ]]
             ]
         ]

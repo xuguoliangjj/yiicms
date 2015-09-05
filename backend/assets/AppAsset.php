@@ -22,6 +22,7 @@ class AppAsset extends AssetBundle
         'js/metisMenu/dist/metisMenu.css',
         'css/site.css',
         'css/menu.css',
+        'css/style.css',
     ];
     public $js = [
         'js/metisMenu/dist/metisMenu.js',

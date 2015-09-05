@@ -24,7 +24,7 @@ AppAsset::register($this);
     <?=$this -> context -> renderPartial('@backend/views/layouts/_top');?>
     <div class="container-fluid own-container-fluid">
         <?php if(!Yii::$app->user->isGuest && !empty($this ->context -> leftMenu)):?>
-        <div class="row hidden-xs">
+        <div class="row">
             <div class="col-xs-12 col-sm-2 own-search-bar">
                 <div class="input-group input-group" style="padding:10px;">
                     <input type="text" class="form-control" placeholder="搜索......" aria-describedby="sizing-addon1">

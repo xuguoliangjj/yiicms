@@ -19,6 +19,7 @@ class AuthItem extends Model{
     public $ruleName;
     public $data;
 
+    //Item
     private $_item;
 
     /**
@@ -38,6 +39,24 @@ class AuthItem extends Model{
     }
 
     /**
+     * 初始化对象
+     * @param Item  $item
+     * @param array $config
+     */
+    public function __construct($item=NULL, $config = [])
+    {
+        $this->_item = $item;
+        if ($item !== null) {
+            $this->name = $item->name;
+            $this->type = $item->type;
+            $this->description = $item->description;
+            $this->ruleName = $item->ruleName;
+            $this->data = $item->data;
+        }
+        parent::__construct($config);
+    }
+
+    /**
      * @inheritdoc
      */
     public function attributeLabels()
@@ -53,20 +72,54 @@ class AuthItem extends Model{
         ];
     }
 
+    /**
+     * Get item
+     * @return Item
+     */
+    public function getItem()
+    {
+        return $this->_item;
+    }
+
+    /**
+     * 检查是否是新记录
+     * @return boolean
+     */
+    public function getIsNewRecord()
+    {
+        return $this->_item === null;
+    }
+
     public function save()
     {
-        $manager = Yii::$app->authManager;
-        if($this->type == Item::TYPE_ROLE){
-            $this->_item = $manager->createRole($this->name);
-        }else{
-            $this->_item = $manager->createPermission($this->name);
-        }
-        $this->_item->name = $this->name;
-        $this->_item->description = $this->description;
-        $this->_item->ruleName = $this->ruleName;
-        $this->_item->data = $this->data;
+        if($this->validate()) {
+            $manager = Yii::$app->authManager;
+            if ($this->_item === null) {
+                if ($this->type == Item::TYPE_ROLE) {
+                    $this->_item = $manager->createRole($this->name);
+                } else {
+                    $this->_item = $manager->createPermission($this->name);
+                }
+                //新增新的角色
+                $isNew = true;
+            }else{
+                //修改现有角色
+                $isNew = false;
+                $oldName = $this->_item->name;
+            }
+            $this->_item->name = $this->name;
+            $this->_item->description = $this->description;
+            $this->_item->ruleName = $this->ruleName;
+            $this->_item->data = $this->data;
 
-        $manager->add($this->_item);
-        return true;
+            if ($isNew) {
+                $manager->add($this->_item);
+            } else {
+                $manager->update($oldName, $this->_item);
+            }
+            return true;
+        }else{
+            return false;
+        }
     }
 }

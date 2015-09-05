@@ -34,7 +34,7 @@ class EditorGridView extends GridView
      */
     public $filterErrorOptions = ['class' => ''];
 
-    public $buttonOptions = ['class'=>'grid-button'];
+    public $buttonOptions = ['class'=>'grid-button bg-dark'];
     /**
      * @var array
      * 搜索发生的错误
@@ -131,7 +131,7 @@ class EditorGridView extends GridView
             $tableBody,
         ]);
         $table = Html::tag('table', implode("\n", $content), $this->tableOptions);
-        return $button.$filter.Html::tag('div',$table,$this->outerTableOptions);
+        return $filter.$button.Html::tag('div',$table,$this->outerTableOptions);
     }
 
     /*
