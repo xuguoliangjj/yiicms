@@ -76,6 +76,19 @@ class Rule extends Model{
         return $this->_item === null;
     }
 
+    public static function find($id)
+    {
+        $item = Yii::$app->authManager->getRule($id);
+        if($item != NULL)
+            return new static($item);
+        else
+            return NULL;
+    }
+
+    /**
+     * save or update
+     * @return bool
+     */
     public function save()
     {
         if($this->validate()){
@@ -109,5 +122,14 @@ class Rule extends Model{
             'name' => '名称',
             'className' => '规则类'
         ];
+    }
+
+    /**
+     * Get item
+     * @return Item
+     */
+    public function getItem()
+    {
+        return $this->_item;
     }
 }

@@ -15,10 +15,12 @@ class EditorGridViewAsset extends AssetBundle
 
     public $css = [
         'bootstrap3-editable/css/bootstrap-editable.css',
+        'layer/skin/layer.css',
         'admin.css'
     ];
     public $js = [
         'bootstrap3-editable/js/bootstrap-editable.js',
+        'layer/layer.js',
         'admin.js'
     ];
     public $depends = [

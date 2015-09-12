@@ -22,10 +22,27 @@ class RuleController extends BaseController
     {
         $model = new Rule();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->name]);
+            return $this->redirect(['index', 'id' => $model->name]);
         } else {
             return $this->render('create', ['model' => $model]);
         }
+    }
+
+    public function actionUpdate($id)
+    {
+        $model = Rule::find($id);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['index']);
+        } else {
+            return $this->render('update', ['model' => $model]);
+        }
+    }
+
+    public function actionDelete($id)
+    {
+        $model = Rule::find($id);
+        Yii::$app->authManager->remove($model->item);
+        return $this->redirect(['index']);
     }
 
 }
