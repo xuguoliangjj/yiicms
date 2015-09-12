@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel'=>$searchModel,
                 'summary'=>'',
                 'buttons'=>[
-                    \yii\helpers\Html::a('新增路由',['/setting/route/create'],['class'=>'btn btn-sm btn-primary'])
+                    \yii\helpers\Html::a('新增规则',['/setting/route/create'],['class'=>'btn btn-sm btn-primary'])
                 ],
                 'columns'=>[
                     ['attribute'=>'name','label'=>'名称','filter'=>true],
