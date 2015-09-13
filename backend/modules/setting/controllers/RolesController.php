@@ -2,9 +2,12 @@
 
 namespace backend\modules\setting\controllers;
 use \backend\components\BaseController;
+use backend\modules\setting\models\RoleAuthForm;
 use common\models\searchs\AuthItemSearch;
 use common\models\AuthItem;
 use Yii;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Json;
 use yii\rbac\Item;
 use yii\web\NotFoundHttpException;
 
@@ -53,9 +56,71 @@ class RolesController extends BaseController
         ]);
     }
 
-    public function actionView($id)
+    public function actionView($id,  $term = '')
     {
-        return $this->render('view');
+        $model = new RoleAuthForm();
+        $model->roles = [$id=>$id];
+        $model->setScenario('auth');
+        if($model->load(Yii::$app->request->post()) && $model->validate()){
+            foreach($model->getAttributes() as $key => $value){
+                if(empty($value)){
+                    $model->$key=[];
+                }
+            }
+            $roles = ArrayHelper::merge($model->roles,$model->routes,$model->permissions);
+            $manager = Yii::$app->getAuthManager();
+            $parent = $manager->getRole($id);
+            $manager->removeChildren($parent);
+            foreach ($roles as $role) {
+                if($role == $id){
+                    continue;
+                }
+                $child = $manager->getRole($role);
+                $child = $child ? : $manager->getPermission($role);
+                $manager->addChild($parent, $child);
+            }
+            Yii::$app->session->setFlash('success',"修改 $id 成功");
+            $this->redirect(['index']);
+
+        }
+        $result = [
+            'Roles' => [],
+            'Permissions' => [],
+            'Routes' => [],
+        ];
+        $authManager = Yii::$app->authManager;
+        $children = array_keys($authManager->getChildren($id));
+        $children[] = $id;
+        foreach ($authManager->getRoles() as $name => $role) {
+//            if (in_array($name, $children)) {
+//                continue;
+//            }
+            if (empty($term) or strpos($name, $term) !== false) {
+                $result['Roles'][$name] = $name;
+            }
+        }
+        foreach ($authManager->getPermissions() as $name => $role) {
+//            if (in_array($name, $children)) {
+//                continue;
+//            }
+            if (empty($term) or strpos($name, $term) !== false) {
+                $result[$name[0] === '/' ? 'Routes' : 'Permissions'][$name] = $name;
+            }
+        }
+
+        foreach ($authManager->getChildren($id) as $name => $child) {
+            if (empty($term) or strpos($name, $term) !== false) {
+                if ($child->type == Item::TYPE_ROLE) {
+                    $model->roles[$name] = $name;
+                } else {
+                    if($name[0] === '/')
+                        $model->routes[$name]=$name;
+                    else
+                        $model->permissions[$name]=$name;
+                }
+            }
+        }
+        return $this->render('view',['result'=>$result,'model'=>$model]);
     }
 
     protected function findModel($id)

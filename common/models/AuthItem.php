@@ -122,4 +122,13 @@ class AuthItem extends Model{
             return false;
         }
     }
+
+    public static function find($id)
+    {
+        $item = Yii::$app->authManager->getPermission($id);
+        if($item != NULL)
+            return new static($item);
+        else
+            return NULL;
+    }
 }

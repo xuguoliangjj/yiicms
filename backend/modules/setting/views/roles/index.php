@@ -17,8 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns'=>[
                     ['attribute'=>'name','label'=>'名称','filter'=>true],
                     ['attribute'=>'description','label'=>'简述'],
-                    ['attribute'=>'createdAt','label'=>'创建时间','format'=>['date', 'php:Y-m-d']],
-                    ['attribute'=>'updatedAt','label'=>'更新时间','format'=>['date', 'php:Y-m-d']],
+                    ['attribute'=>'createdAt','label'=>'创建时间','format'=>['date', 'php:Y-m-d H:i:s']],
+                    ['attribute'=>'updatedAt','label'=>'更新时间','format'=>['date', 'php:Y-m-d H:i:s']],
                     ['class' => 'yii\grid\ActionColumn','template' => '{view} {update} {delete}'],
                 ]
             ]);

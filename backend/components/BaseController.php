@@ -17,6 +17,21 @@ class BaseController extends Controller
     //默认的菜单图标
     public $defaultIcon = 'glyphicon glyphicon-star';
 
+    public function init()
+    {
+        parent::init();
+        if(Yii::$app->session->hasFlash('success')){
+            $msg = Yii::$app->session->getFlash('success');
+            $this->getView()->registerJs("
+            layer.msg('$msg', {icon: 1});
+            ");
+        }else if(Yii::$app->session->hasFlash('fail')){
+            $msg = Yii::$app->session->getFlash('fail');
+            $this->getView()->registerJs("
+            layer.msg('$msg', {icon: 5});
+            ");
+        }
+    }
     //默认显示菜单图标
     public $activeIcon = true;
     public function beforeAction($action)

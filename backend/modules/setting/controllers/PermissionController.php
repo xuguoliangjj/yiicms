@@ -33,4 +33,10 @@ class PermissionController extends BaseController
             return $this->render('create',['model'=>$model]);
         }
     }
+
+    public function actionView($id)
+    {
+        $model = AuthItem::find($id);
+        return $this->render('view',['model'=>$model]);
+    }
 }
