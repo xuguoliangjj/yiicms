@@ -3,8 +3,10 @@
 namespace backend\modules\setting\controllers;
 
 use \backend\components\BaseController;
+use backend\modules\setting\models\AuthPermissionForm;
 use common\models\AuthItem;
 use common\models\searchs\AuthItemSearch;
+use yii\helpers\Json;
 use yii\rbac\Item;
 use Yii;
 
@@ -36,7 +38,20 @@ class PermissionController extends BaseController
 
     public function actionView($id)
     {
-        $model = AuthItem::find($id);
-        return $this->render('view',['model'=>$model]);
+        $model = new AuthPermissionForm();
+        $result = [
+            'Permissions' => [],
+            'Routes' => [],
+        ];
+        $authManager = Yii::$app->authManager;
+        $children = array_keys($authManager->getChildren($id));
+        $children[] = $id;
+        foreach ($authManager->getPermissions() as $name => $role) {
+            if (empty($term) or strpos($name, $term) !== false) {
+                $result[$name[0] === '/' ? 'Routes' : 'Permissions'][$name] = $name;
+            }
+        }
+
+        return $this->render('view',['model'=>$model,'result'=>$result]);
     }
 }

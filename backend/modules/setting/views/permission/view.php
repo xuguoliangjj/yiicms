@@ -1,7 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lenovo
- * Date: 2015/9/13
- * Time: 1:13
- */
+$this->title = '修改权限';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+
+<div class="panel panel-default">
+    <div class="panel-heading">修改权限</div>
+    <div class="panel-body">
+        <?= $this->render('_auth_permission',['model'=>$model,'result'=>$result])?>
+    </div>
+</div>

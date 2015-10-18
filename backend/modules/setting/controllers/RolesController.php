@@ -92,17 +92,11 @@ class RolesController extends BaseController
         $children = array_keys($authManager->getChildren($id));
         $children[] = $id;
         foreach ($authManager->getRoles() as $name => $role) {
-//            if (in_array($name, $children)) {
-//                continue;
-//            }
             if (empty($term) or strpos($name, $term) !== false) {
                 $result['Roles'][$name] = $name;
             }
         }
         foreach ($authManager->getPermissions() as $name => $role) {
-//            if (in_array($name, $children)) {
-//                continue;
-//            }
             if (empty($term) or strpos($name, $term) !== false) {
                 $result[$name[0] === '/' ? 'Routes' : 'Permissions'][$name] = $name;
             }
