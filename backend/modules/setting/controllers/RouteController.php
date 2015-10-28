@@ -3,8 +3,8 @@
 namespace backend\modules\setting\controllers;
 
 use backend\components\BaseController;
-use common\models\Route;
-use common\models\searchs\AuthItemSearch;
+use backend\modules\setting\models\Route;
+use backend\modules\setting\models\searchs\AuthItemSearch;
 use Yii;
 
 class RouteController extends BaseController

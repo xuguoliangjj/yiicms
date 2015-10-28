@@ -1,0 +1,278 @@
+[33mcommit dd5d85315d2f350e125702e0c93cc9335a939b7e[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Oct 19 00:14:04 2015 +0800
+
+    rbac完善
+
+[33mcommit d16758deadea46db866cadecf5802d6d91021847[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sun Sep 13 23:57:18 2015 +0800
+
+    rbac完善
+
+[33mcommit 2b2cf69bc7f445f8f6d21e1fef00d8d52cf9db4f[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat Sep 12 17:57:53 2015 +0800
+
+    修改
+
+[33mcommit e8c48608ecfa9dd604c2c86d15a95f991b11762c[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat Sep 12 10:46:02 2015 +0800
+
+    rbac完善
+
+[33mcommit fae1177c2d737d07d0cada16e39de050043f51ef[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sun Sep 6 00:15:43 2015 +0800
+
+    rbac完善
+
+[33mcommit 8fb3d27910c557af16d5ab34c168b19b520cd6a2[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sun Aug 30 02:40:20 2015 +0800
+
+    rbac
+
+[33mcommit a572a788a4227dc720685827c4d60ba1c0e12ac6[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Aug 17 00:37:13 2015 +0800
+
+    添加gridview按钮组，面包屑
+
+[33mcommit 0396f7aff6374cc16cc22140c0df5dc8f8bd4d25[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sun Aug 9 22:50:59 2015 +0800
+
+    完善一下菜单
+
+[33mcommit d3d25e7372304ef6d4e570e3cd831884eb9a111c[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Fri Aug 7 00:38:07 2015 +0800
+
+    修改gridview
+
+[33mcommit e1c3df40dcad0f06bffe18811f2b3b298aecb483[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Tue Aug 4 23:16:09 2015 +0800
+
+    修改
+
+[33mcommit d1514ff505c1ada5a265b05440aecce176e9a528[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Aug 3 10:47:11 2015 +0800
+
+    添加jquery
+
+[33mcommit 484c2ba72b06133295da3baa7a82a4c937dcbda2[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Aug 3 10:46:33 2015 +0800
+
+    添加jquery
+
+[33mcommit 80c0a3c5498b6519297b1eafa15f878f82cafc69[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Aug 3 10:35:40 2015 +0800
+
+    添加jquery
+
+[33mcommit f48e03f450edad5e059c2bdc07e0992a173acd06[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Aug 3 10:13:12 2015 +0800
+
+    删除jquery
+
+[33mcommit 7de637f2ba18d2d3a266272ac227eca4d84464be[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Aug 3 10:08:15 2015 +0800
+
+    修复jquery丢失文件
+
+[33mcommit d29199d51682c65cc67cccb87e3e86ad430f99c8[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Aug 3 00:00:54 2015 +0800
+
+    修改
+
+[33mcommit 20c1d6d0020d05d6baa2a32e3a35cff9aae1b071[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Jul 27 00:07:42 2015 +0800
+
+    aa
+
+[33mcommit cdefc1e4adf68dac3922ea1e44ecbc719e05fc56[m
+Merge: 653897e 349fede
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Jul 27 00:03:54 2015 +0800
+
+    hehe
+
+[33mcommit 349fedea17481098b2f52e673f6ac8011c6cffa4[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Fri Jul 24 17:09:14 2015 +0800
+
+    完善菜单
+
+[33mcommit b0ad4a66e43d5a401f29484559115d32ee35c2f1[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Thu Jul 23 18:25:40 2015 +0800
+
+    完善菜单
+
+[33mcommit 4bf939e9e94acc48732c9998a8bc007d23664d12[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Wed Jul 22 18:49:44 2015 +0800
+
+    完善菜单
+
+[33mcommit e184c1e489a834ef8461e30daa3552827503f5d5[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Jul 20 09:56:18 2015 +0800
+
+    完善菜单
+
+[33mcommit 653897ebe581f7732c08249dd0f2d1d542d53bb3[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat Jul 18 17:35:45 2015 +0800
+
+    完善菜单
+
+[33mcommit dd102fb19d1f03fa9d979f72d8857fe82e7701f8[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Fri Jul 17 18:44:04 2015 +0800
+
+    小完善菜单
+
+[33mcommit 08bf499e93c27389b26ab0ac772fe177c16a3188[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Fri Jul 17 18:02:29 2015 +0800
+
+    小完善菜单
+
+[33mcommit 317dfe66af6ca64593ef96edfcfc2b7c041d9ac9[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Fri Jul 17 00:33:47 2015 +0800
+
+    基本菜单管理
+
+[33mcommit e8706bb5195cd7cfe0248551db89321031e1cd09[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon Jul 13 00:47:32 2015 +0800
+
+    基本菜单管理
+
+[33mcommit c043d2e4505019eb997890208f67e07394c726dd[m
+Merge: 9cbeda2 9f62671
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon May 25 00:02:12 2015 +0800
+
+    Merge branch 'master' of https://github.com/xuguoliangjj/yiicms
+
+[33mcommit 9cbeda29f9ae64612c5903636d45f482f22b6ab1[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sun May 24 23:59:35 2015 +0800
+
+    =更新菜单
+
+[33mcommit 9f6267182ea188cdaaaf038b1f852edcdf0e698f[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon May 11 15:43:47 2015 +0800
+
+    升级Yii2.0.4
+
+[33mcommit 795ade2b0e749c1e9380004106c6ea4317e40b2c[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon May 4 20:05:00 2015 +0800
+
+    删除文件\
+
+[33mcommit cd8e68993bab39ac8398518039fc306711a22e44[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon May 4 19:58:17 2015 +0800
+
+    修改
+
+[33mcommit 1b1ad06fa07c7500ac1d5197a79696fe8082c075[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon May 4 19:55:39 2015 +0800
+
+    修改
+
+[33mcommit f5d5e94a51e88269cb523b42b06d1e1f51fe66e3[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Mon May 4 00:38:39 2015 +0800
+
+    ...
+
+[33mcommit 6d6bb130837e01121946e6dbc2e022c3a8d65875[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat May 2 22:03:47 2015 +0800
+
+    修改layout
+
+[33mcommit 6b503fac912d7e3ed7cb408bc58ba63ae33905af[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat May 2 20:55:03 2015 +0800
+
+    修改readme
+
+[33mcommit db9f7750115d93d219f7f5a1ee62bc0fbbdd4d85[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat May 2 20:54:25 2015 +0800
+
+    修改readme
+
+[33mcommit 423fff65711e79e66ff583ef230b6853592e0a4c[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat May 2 04:18:17 2015 +0800
+
+    11111111111111111111111
+
+[33mcommit 1c25741344c1b703b3e2248584d2ed50aa361379[m
+Merge: e4f698a fd3fcad
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat May 2 04:06:50 2015 +0800
+
+    Merge branch 'master' of github.com:xuguoliangjj/yiicms
+
+[33mcommit fd3fcad395e8124a2c4acd07abab902edaf270d9[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat May 2 04:00:01 2015 +0800
+
+    基本项目
+
+[33mcommit ea881f4258e8164dd3eee9e848c5b75eeb1085c6[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat May 2 03:55:35 2015 +0800
+
+    first
+
+[33mcommit e4f698a45258335df29f10368a36a8f1878b4fb6[m
+Author: xuguoliang <1044748759@qq.com>
+Date:   Sat May 2 02:09:23 2015 +0800
+
+    添加基本项目
+
+[33mcommit 1c5c7270a6ede8030e58cea7665d708d807603be[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat May 2 02:00:29 2015 +0800
+
+    删除文件
+
+[33mcommit 8fb0d84a17c6bcd77050f308d9ffb007dc518518[m
+Author: xuguoliangjj <1044748759@qq.com>
+Date:   Sat May 2 01:58:42 2015 +0800
+
+    添加reamme
+
+[33mcommit cc7f35e42516fcd3bea1033391fd147c1c1b8240[m
+Author: xuguoliang <1044748759@qq.com>
+Date:   Sat May 2 01:36:57 2015 +0800
+
+    add distributed
+
+[33mcommit 16c81eb556deb9c5565ad8b0e060623b0f12c3d2[m
+Author: root <root@iZ23zt8pil5Z.(none)>
+Date:   Sat May 2 01:33:02 2015 +0800
+
+    wrote a readme file

@@ -4,8 +4,8 @@ namespace backend\modules\setting\controllers;
 
 use \backend\components\BaseController;
 use backend\modules\setting\models\AuthPermissionForm;
-use common\models\AuthItem;
-use common\models\searchs\AuthItemSearch;
+use backend\modules\setting\models\AuthItem;
+use backend\modules\setting\models\searchs\AuthItemSearch;
 use yii\helpers\Json;
 use yii\rbac\Item;
 use Yii;

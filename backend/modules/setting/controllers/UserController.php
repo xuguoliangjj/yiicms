@@ -3,8 +3,7 @@
 namespace backend\modules\setting\controllers;
 
 use \backend\components\BaseController;
-use common\models\searchs\UserSearch;
-use common\models\User;
+use backend\modules\setting\models\searchs\UserSearch;
 use yii\helpers\Json;
 use Yii;
 

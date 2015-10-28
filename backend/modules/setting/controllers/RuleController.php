@@ -2,8 +2,8 @@
 
 namespace backend\modules\setting\controllers;
 use \backend\components\BaseController;
-use common\models\Rule;
-use common\models\searchs\RuleSearch;
+use backend\modules\setting\models\Rule;
+use backend\modules\setting\models\searchs\RuleSearch;
 use Yii;
 
 class RuleController extends BaseController
@@ -32,6 +32,7 @@ class RuleController extends BaseController
     {
         $model = Rule::find($id);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success','修改成功');
             return $this->redirect(['index']);
         } else {
             return $this->render('update', ['model' => $model]);

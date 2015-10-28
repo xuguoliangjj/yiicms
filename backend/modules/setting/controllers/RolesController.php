@@ -3,8 +3,8 @@
 namespace backend\modules\setting\controllers;
 use \backend\components\BaseController;
 use backend\modules\setting\models\RoleAuthForm;
-use common\models\searchs\AuthItemSearch;
-use common\models\AuthItem;
+use backend\modules\setting\models\searchs\AuthItemSearch;
+use backend\modules\setting\models\AuthItem;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
