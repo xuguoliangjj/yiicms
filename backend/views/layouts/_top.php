@@ -4,7 +4,7 @@ use yii\bootstrap\NavBar;
 ?>
 <?php
 NavBar::begin([
-    'brandLabel' => '后台管理系统',
+    'brandLabel' => '数据分析平台',
     'brandUrl' => Yii::$app->homeUrl,
     'innerContainerOptions'=>['class'=>'container-fluid'],
     'options' => [

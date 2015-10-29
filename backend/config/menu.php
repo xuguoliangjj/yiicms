@@ -8,7 +8,7 @@
 
 return [
     'menu'=>[
-        'fronted'=> ['label'=>'前台管理','items'=>[
+        'fronted'=> ['label'=>'数据统计','items'=>[
                 ['icon'=>'glyphicon glyphicon-home','label' => '主页','items' => [
                     ['label' => '新产品1', 'url' => ['/main/default']],
                     ['label' => '流行产品1', 'url' => ['/product/index2']],
