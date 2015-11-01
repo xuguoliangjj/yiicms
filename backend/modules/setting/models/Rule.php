@@ -76,6 +76,10 @@ class Rule extends Model{
         return $this->_item === null;
     }
 
+    /**
+     * @param $id
+     * @return null|static
+     */
     public static function find($id)
     {
         $item = Yii::$app->authManager->getRule($id);

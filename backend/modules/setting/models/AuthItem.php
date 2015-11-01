@@ -123,7 +123,7 @@ class AuthItem extends Model{
         }
     }
 
-    public static function find($id)
+    public static function findByPk($id)
     {
         $item = Yii::$app->authManager->getPermission($id);
         if($item != NULL)

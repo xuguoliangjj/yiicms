@@ -1,13 +1,12 @@
 <?php
 
 namespace backend\modules\setting\controllers;
-use \backend\components\BaseController;
+use backend\components\BaseController;
 use backend\modules\setting\models\RoleAuthForm;
 use backend\modules\setting\models\searchs\AuthItemSearch;
 use backend\modules\setting\models\AuthItem;
 use Yii;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Json;
 use yii\rbac\Item;
 use yii\web\NotFoundHttpException;
 

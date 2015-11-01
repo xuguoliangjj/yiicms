@@ -18,6 +18,22 @@ class Route extends Model{
 
     public $description;
 
+    private $_item;
+
+    /*
+     * 是否是新纪录
+     */
+    private $_isNewRecord=true;
+
+    public function __construct($item=NULL,$config=[])
+    {
+        $this->_item=$item;
+        if($this->_item != NULL){
+            $this->route=$item->name;
+            $this->description=$item->description;
+        }
+        parent::__construct($config);
+    }
     /**
      * @inheritdoc
      */
@@ -68,4 +84,25 @@ class Route extends Model{
             ];
         }
     }
+
+    public static function find($id)
+    {
+        $auth = Yii::$app->authManager;
+        $item = $auth->getPermission($id);
+        if($item != NULL){
+            return new static($item);
+        }else{
+            return NULL;
+        }
+    }
+
+    /**
+     * 检查是否是新纪录
+     * @return boolean
+     */
+    public function getIsNewRecord()
+    {
+        return $this->_item === null;
+    }
+
 }

@@ -12,7 +12,7 @@ use \yii\helpers\Html;
     <div class="form-group">
         <?= $form->field($model,'route')?>
         <?= $form->field($model,'description')->textarea()?>
-        <?= Html::submitButton('添加',
+        <?= Html::submitButton($model -> isNewRecord ? '添加' : '修改',
             ['class' => 'btn btn-success btn-sm']) ?>
     </div>
 <?php ActiveForm::end(); ?>
