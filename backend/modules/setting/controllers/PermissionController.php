@@ -48,7 +48,7 @@ class PermissionController extends BaseController
         $children[] = $id;
         foreach ($authManager->getPermissions() as $name => $role) {
             if (empty($term) or strpos($name, $term) !== false) {
-                $result[$name[0] === '/' ? 'Routes' : 'Permissions'][$name] = $name;
+                $result[$name[0] === '/' ? 'Routes' : 'Permissions'][$name] = $role->description;
             }
         }
 
