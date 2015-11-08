@@ -17,7 +17,7 @@ class AuthPermissionForm extends Model
     public function rules()
     {
         return [
-
+           // ['routes,permissions','default','value'=>[]]
         ];
     }
 
@@ -32,7 +32,7 @@ class AuthPermissionForm extends Model
     {
         return [
             'routes'=>'路由',
-            'permissions'=>'规则'
+            'permissions'=>'权限'
         ];
     }
 }

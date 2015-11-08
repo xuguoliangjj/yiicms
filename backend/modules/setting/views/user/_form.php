@@ -11,11 +11,11 @@ use \yii\helpers\Html;
 ?>
 <?php $form = ActiveForm::begin(['id' => 'assignment-form']); ?>
 
-<?= $form->field($model, 'roles')->checkboxList($model->roles); ?>
-<?= $form->field($model, 'permissions')->checkboxList($model->permissions); ?>
+<?= $form->field($model, 'roles')->checkboxList($roles); ?>
+<?= $form->field($model, 'permissions')->checkboxList($permissions); ?>
 
 <div class="form-group">
-    <?= Html::submitButton('添加',
+    <?= Html::submitButton('修改',
         ['class' => 'btn btn-success btn-sm']) ?>
 </div>
 <?php ActiveForm::end(); ?>

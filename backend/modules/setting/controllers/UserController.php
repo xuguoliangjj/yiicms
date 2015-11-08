@@ -25,18 +25,56 @@ class UserController extends BaseController
     public function actionView($id)
     {
         $model = new AssignmentForm();
+        $model -> setScenario('auth');
+        $permissions = [];
         $authManager = Yii::$app->authManager;
+        if($model -> load(Yii::$app->request->post()) && $model -> validate()){
+            //Revokes all roles from a user.
+            try {
+                $authManager->revokeAll($id);
+                //角色
+                if(is_array($model->roles)) {
+                    foreach ($model->roles as $name) {
+                        $item = $authManager->getRole($name);
+                        $authManager->assign($item, $id);
+                    }
+                }
+                //权限
+                if(is_array($model->permissions)) {
+                    foreach ($model->permissions as $name) {
+                        $item = $authManager->getPermission($name);
+                        $authManager->assign($item, $id);
+                    }
+                }
+
+            }catch (\Exception $e){
+                Yii::$app ->session->setFlash('fail',$e->getMessage());
+                $this -> refresh();
+                Yii::$app->end();
+            }
+            Yii::$app ->session->setFlash('success','授权成功');
+            $this -> redirect(['index']);
+        }
         $roles = $authManager->getRoles();
-        $model->roles = ArrayHelper::map($roles,'name','description');
+        $roles = ArrayHelper::map($roles,'name','name');
         foreach ($authManager->getPermissions() as $name => $role) {
-            if (empty($term) or strpos($name, $term) !== false) {
-                if(isset($role->name[0]) && $role->name[0] == '/')
-                    $model->permissions[$name] = $role->description;
+            if($role->name[0] == '/'){
+                $permissions[$name] = $role->description;
             }
         }
+
+        foreach($authManager->getAssignments($id) as $name => $item){
+            if($name[0] == '/'){
+                $model -> permissions[$authManager -> getPermission($name) -> description] =  $name;
+            }else{
+                $model -> roles[$name] = $name;
+            }
+        }
+
         return $this->render('view',[
             'model'=>$model,
-            'roles'=>$roles
+            'roles'=>$roles,
+            'permissions'=>$permissions
         ]);
     }
 

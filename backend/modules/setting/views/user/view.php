@@ -12,6 +12,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="panel panel-default">
     <div class="panel-heading">用户授权</div>
     <div class="panel-body">
-        <?= $this->render('_form',['model'=>$model,'roles'=>$roles])?>
+        <?= $this->render('_form',[
+            'model'=>$model,
+            'roles'=>$roles,
+            'permissions'=>$permissions])?>
     </div>
 </div>

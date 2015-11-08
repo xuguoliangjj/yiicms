@@ -10,7 +10,7 @@ return [
     'menu'=>[
         'fronted'=> ['label'=>'数据统计','items'=>[
                 ['icon'=>'glyphicon glyphicon-home','label' => '主页','items' => [
-                    ['label' => '新产品1', 'url' => ['/main/default']],
+                    ['label' => '首页测试', 'url' => ['/main/default']],
                     ['label' => '流行产品1', 'url' => ['/product/index2']],
                 ]],
                 ['icon'=>'glyphicon glyphicon-tag','label' => '产品','items' => [

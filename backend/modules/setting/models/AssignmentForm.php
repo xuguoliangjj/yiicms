@@ -26,8 +26,8 @@ class AssignmentForm extends Model
     public function attributeLabels()
     {
         return [
-            'roles'=>'路由',
-            'permissions'=>'规则'
+            'roles'=>'角色',
+            'permissions'=>'权限'
         ];
     }
 }
