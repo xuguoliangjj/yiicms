@@ -15,4 +15,5 @@
 }
 #roleauthform-routes label,#assignmentform-permissions label,#authpermissionform-routes label{
     width:20%;
+    display: inline-block;
 }
