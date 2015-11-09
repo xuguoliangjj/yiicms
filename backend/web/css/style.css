@@ -13,3 +13,6 @@
 .form-control{
     border-radius: 0px;
 }
+#roleauthform-routes label,#assignmentform-permissions label,#authpermissionform-routes label{
+    width:20%;
+}
