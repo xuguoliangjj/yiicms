@@ -65,13 +65,13 @@ class BaseController extends Controller
     //验证是否有权限
     private function authRoute()
     {
-        if($this->action->id == 'index'){
+        if(count(explode('/',$this->action->id)) == 3 && $this->action->id == 'index'){
             $route = trim(str_replace('index','',$this -> route),'/');
         }else{
             $route = trim($this->route,'/');
         }
         if(!$this->auth($route)){
-            throw new ForbiddenHttpException('没有权限');
+            throw new ForbiddenHttpException('没有相关权限，如需开通，请联系管理人员！');
         }else{
             return true;
         }
@@ -79,6 +79,9 @@ class BaseController extends Controller
 
     private function auth($route)
     {
+        if($route == 'site/login' || $route == 'site/error' || $route == 'site/logout'){
+            return true;
+        }
         $route = '/'.trim($route,'/');
         $arr   = explode('/',trim($route,'/'));
         if(!Yii::$app->user->can('/*') && !Yii::$app->user->can('/'.$arr[0].'/'.$arr[1].'/*') && !Yii::$app->user->can($route)){

@@ -24,14 +24,17 @@ class AppAsset extends AssetBundle
         'css/site.css',
         'css/menu.css',
         'css/style.css',
+        'js/icheck/skins/square/grey.css'
     ];
     public $js = [
         'js/metismenu/dist/metisMenu.js',
         'js/layer/layer.js',
         'js/main.js',
+        'js/icheck/icheck.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset'
     ];
 }
