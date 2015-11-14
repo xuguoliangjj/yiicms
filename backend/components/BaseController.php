@@ -16,8 +16,13 @@ class BaseController extends Controller
     public $topMenu;    //顶部菜单
     public $leftMenu;   //左侧二级菜单
 
-    //默认的菜单图标
-    public $defaultIcon = 'glyphicon glyphicon-star';
+    /*
+     * 默认的菜单图标
+     * public $defaultIcon = 'glyphicon glyphicon-star';
+     */
+    public $defaultIcon = '';
+    //默认显示菜单图标
+    public $activeIcon = true;
 
     public function init()
     {
@@ -35,8 +40,6 @@ class BaseController extends Controller
         }
     }
 
-    //默认显示菜单图标
-    public $activeIcon = true;
     public function beforeAction($action)
     {
         if(Yii::$app->user->isGuest && $this->route != 'site/login')

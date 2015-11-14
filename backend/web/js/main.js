@@ -9,4 +9,11 @@ $(function(){
         increaseArea:'20%'
     });
     $("#menu").metisMenu({});
+
+    $(".nav-pills").on("shown.bs.tab",function(){
+        var index = $(this).index();
+
+        $(".tab-content .tab-pane.active").find(".own-highchart").highcharts().reflow();
+
+    });
 });
