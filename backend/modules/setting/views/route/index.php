@@ -3,8 +3,13 @@ $this->title = '路由列表';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php \yii\widgets\Pjax::begin()?>
-    <div class="panel panel-default">
-        <div class="panel-heading">路由列表</div>
+    <div class="panel panel-default own-panel">
+        <div class="panel-heading">
+            路由列表
+            <span class="pull-right own-toggle">
+            <a class="glyphicon glyphicon-chevron-up"></a>
+            </span>
+        </div>
         <div class="panel-body">
             <?= \xuguoliangjj\editorgridview\EditorGridView::widget([
                 'dataProvider'=>$dataProvider,

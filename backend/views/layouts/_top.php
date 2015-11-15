@@ -18,10 +18,9 @@ if (Yii::$app->user->isGuest) {
         'label' => '<span class="glyphicon glyphicon-user"></span> '.Yii::$app->user->identity->username,
         'items' => [
             ['label' => '<span class="glyphicon glyphicon-off"></span> 注销登录', 'url' => ['/site/logout'],'linkOptions' => ['data-method' => 'post']],
-            ['label' => '<span class="glyphicon glyphicon-cog"></span> 修改密码','url'=>['/']]
-        ],
+            ['label' => '<span class="glyphicon glyphicon-cog"></span> 修改密码','url'=>['/']],
+        ]
     ];
-
 }
 if(!Yii::$app->user->isGuest) {
     echo Nav::widget([

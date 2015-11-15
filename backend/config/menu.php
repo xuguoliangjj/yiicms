@@ -11,13 +11,13 @@ return [
         'fronted'=> ['label'=>'数据统计','items'=>[
                 ['icon'=>'glyphicon glyphicon-user','label' => '玩家分析','items' => [
                     ['label' => '新增玩家', 'url' => ['/main/default']],
-                    ['label' => '流行产品1', 'url' => ['/product/index2']],
+                    ['label' => '活跃玩家', 'url' => ['/product/index2']],
                 ]],
-                ['icon'=>'glyphicon glyphicon-tag','label' => '产品','items' => [
+                ['icon'=>'glyphicon glyphicon-tag','label' => '付费分析','items' => [
                     ['label' => '新产品2', 'url' => ['/site/indsex']],
                     ['label' => '流行产品2', 'url' => ['/product/index4']],
                 ]],
-                ['icon'=>'glyphicon glyphicon-folder-close','label' => '新闻中心','items' => [
+                ['icon'=>'glyphicon glyphicon-folder-close','label' => '流失分析','items' => [
                     ['label' => '新产品3', 'url' => ['/product/index5']],
                     ['label' => '流行产品3', 'url' => ['/product/index6']],
                 ]],

@@ -114,8 +114,6 @@ class PermissionController extends BaseController
         if($model -> load(Yii::$app->request->post()) && $model -> save()){
             Yii::$app ->session->setFlash('success','修改权限成功');
             $this -> redirect(['index']);
-        }else{
-            Yii::$app ->session->setFlash('success','修改权限是失败');
         }
         return $this->render('update',[
             'model'=>$model

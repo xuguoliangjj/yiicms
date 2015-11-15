@@ -18,13 +18,16 @@
     display: inline-block;
 }
 
-.own-tags .nav-pills{
+.own-panel .nav-pills{
     margin: -15px -15px 0;
     background: #FAFAFA none repeat scroll 0% 0%;
     border-bottom: 1px solid #E4E4E4;
 }
+.own-panel .nav-pills li{
+    margin-left: 0px;
+}
 
-.own-tags .nav-pills > li > a{
+.own-panel .nav-pills > li > a{
     border: none;
     border-radius: 0px;
     border-right: 1px solid #E4E4E4;
@@ -32,7 +35,7 @@
     outline: none;
 }
 
-.own-tags .nav-pills > li.active > a{
+.own-panel .nav-pills > li.active > a{
     border-bottom:3px solid #2D6FAB;
     background:#F6F6F6;
     background-image:-ms-linear-gradient(top,#F3F3F3,#FFF);
@@ -41,21 +44,21 @@
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#F3F3F3', endColorstr='#FFFFFF', GradientType='0')
 }
 
-.own-tags .nav-pills > li > a:hover{
+.own-panel .nav-pills > li > a:hover{
     color: #2771B5;
 }
 
-.own-tags .nav-pills > li > a:hover{
+.own-panel .nav-pills > li > a:hover{
     background-color: #FAFAFA;
 }
 
-.own-tags .nav-pills > li.active > a ,
-.own-tags .nav-pills > li.active > a:hover,
-.own-tags .nav-pills > li.active > a:focus{
+.own-panel .nav-pills > li.active > a ,
+.own-panel .nav-pills > li.active > a:hover,
+.own-panel .nav-pills > li.active > a:focus{
     color: #464646;
 }
 
-.own-tags .panel-heading{
+.own-panel .panel-heading{
     position:relative;
     border-bottom:1px solid #E4E4E4;
     font-size:14px;
