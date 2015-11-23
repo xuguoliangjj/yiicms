@@ -5,7 +5,7 @@ $this->params['breadcrumbs'][] = ['label'=>$this->title];
 ?>
 <div class="panel panel-default own-panel">
     <div class="panel-heading">
-        新增玩家
+        <label>新增玩家</label>
         <span class="pull-right own-toggle">
             <a class="glyphicon glyphicon-chevron-up"></a>
         </span>
@@ -21,6 +21,7 @@ $this->params['breadcrumbs'][] = ['label'=>$this->title];
                     [
                         'label' => '新增与激活',
                         'content' => $this->render('part'),
+                        'headerOptions'=>['id'=>'addPlayer'],
                         'active' => true
                     ],
                     [
@@ -37,7 +38,7 @@ $this->params['breadcrumbs'][] = ['label'=>$this->title];
 
 <div class="panel panel-default own-panel">
     <div class="panel-heading">
-        新增玩家2
+        <label>玩家在线时长</label>
         <span class="pull-right own-toggle">
             <a class="glyphicon glyphicon-chevron-up"></a>
         </span>
@@ -51,7 +52,7 @@ $this->params['breadcrumbs'][] = ['label'=>$this->title];
             'navType'=>'nav-pills',
             'items' => [
                 [
-                    'label' => '新增与激活2',
+                    'label' => '首次在线时长',
                     'content' => $this->render('part2'),
                     'active' => true
                 ],

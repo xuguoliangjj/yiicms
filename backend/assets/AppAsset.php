@@ -30,6 +30,7 @@ class AppAsset extends AssetBundle
         'js/metismenu/dist/metisMenu.js',
         'js/layer/layer.js',
         'js/main.js',
+        'js/app.js',
         'js/icheck/icheck.js',
         'js/highcharts/js/highcharts.js',
         'js/highcharts/js/modules/exporting.js'
