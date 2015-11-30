@@ -1,7 +1,5 @@
 <?php
 /* @var $this yii\web\View */
-
-$this->title = '后台管理系统';
 ?>
 <div class="container">
     <div class="jumbotron">

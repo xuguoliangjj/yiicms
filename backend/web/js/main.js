@@ -18,7 +18,7 @@ $(function(){
     });
     //toggle
     $(".own-toggle").click(function(){
-        var body = $(this).parent('.panel-heading').next().stop().slideToggle('slow');
+        $(this).parent('.panel-heading').next().stop().slideToggle('slow');
         var hand = $(this).children('a');
         if(hand.hasClass("glyphicon-chevron-up"))
             hand.removeClass("glyphicon glyphicon-chevron-up").addClass('glyphicon glyphicon-chevron-down');

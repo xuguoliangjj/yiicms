@@ -92,11 +92,3 @@
     text-decoration: none;
     color: #464646;
 }
-
-.own-panel .panel-body{
-    min-height: 459px;
-}
-
-.own-panel .panel-heading label{
-    margin-bottom: 0px;
-}

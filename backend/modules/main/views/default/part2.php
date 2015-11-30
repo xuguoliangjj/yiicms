@@ -1,5 +1,6 @@
-<div id="container3" class="own-highchart"></div>
-
+<div class="container-fluid">
+    <div id="container3" class="row own-highchart"></div>
+</div>
 <?php
 $this->registerJs("
 $('#container3').highcharts({

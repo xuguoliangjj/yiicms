@@ -30,10 +30,14 @@ if(!Yii::$app->user->isGuest) {
     ]);
 }
 
+
 echo Nav::widget([
     'encodeLabels'=>false,
     'options' => ['class' => 'navbar-nav navbar-right'],
     'items' => $menuItems,
 ]);
+
+
+
 NavBar::end();
 ?>

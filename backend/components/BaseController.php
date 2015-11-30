@@ -27,6 +27,7 @@ class BaseController extends Controller
     public function init()
     {
         parent::init();
+        $this->getView()->title = '数据分析平台';
         if(Yii::$app->session->hasFlash('success')){
             $msg = Yii::$app->session->getFlash('success');
             $this->getView()->registerJs("

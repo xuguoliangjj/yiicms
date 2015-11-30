@@ -1,8 +1,10 @@
-<div id="container2" class="own-highchart"></div>
-
+<div class="container-fluid">
+    <div id="container2" class="row own-highchart"></div>
+</div>
 <?php
 $this->registerJs("
-$('#container2').highcharts({
+$('#container2').on('own.redraw.chart',function(){
+   $('#container2').highcharts({
 	chart : {
 		type : 'column'
 	},
@@ -48,6 +50,7 @@ $('#container2').highcharts({
 			data : [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
 		}
 	]
+});
 });
 ");
 ?>
