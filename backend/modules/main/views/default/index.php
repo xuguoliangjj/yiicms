@@ -18,16 +18,16 @@ $this->params['breadcrumbs'][] = ['label'=>$this->title];
                 'navType'=>'nav-pills',
                 'items' => [
                     [
-                        'label' => '新增与激活',
+                        'label' => '新增玩家',
                         'content' => $this->render('part'),
-                        'headerOptions' => ['id'=>'addPlayer'],
+//                        'headerOptions' => ['id'=>'adp-tag'],
                         'active' => true
                     ],
                     [
-                        'label' => '玩家转化率',
+                        'label' => '激活玩家',
                         'content' => $this->render('other'),
-                        'headerOptions' => [],
-                        'options' => ['id' => 'myveryownID'],
+//                        'headerOptions' => [],
+//                        'options' => ['id' => 'acp-tag'],
                     ]
                 ],
             ]);
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = ['label'=>$this->title];
 
 <div class="panel panel-default own-panel">
     <div class="panel-heading">
-        新增玩家2
+        实时数据
         <span class="pull-right own-toggle">
             <a class="glyphicon glyphicon-chevron-up"></a>
         </span>
@@ -50,12 +50,12 @@ $this->params['breadcrumbs'][] = ['label'=>$this->title];
             'navType'=>'nav-pills',
             'items' => [
                 [
-                    'label' => '新增与激活2',
+                    'label' => '实时在线',
                     'content' => $this->render('part2'),
                     'active' => true
                 ],
                 [
-                    'label' => '玩家转化率2',
+                    'label' => '活跃玩家',
                     'content' => $this->render('other2'),
                     'headerOptions' => [],
 

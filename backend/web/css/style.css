@@ -92,3 +92,7 @@
     text-decoration: none;
     color: #464646;
 }
+
+.own-panel > .panel-body > .tab-content{
+    min-height: 400px;
+}
