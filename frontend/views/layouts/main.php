@@ -26,27 +26,32 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
+                'brandLabel' => '第十九层空间',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
             $menuItems = [
-                ['label' => 'Home', 'url' => ['/site/index']],
-                ['label' => 'About', 'url' => ['/site/about']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
+                ['label' => '主页', 'url' => ['/site/index']],
+                ['label' => 'PHP', 'url' => ['/site/php']],
+                ['label' => 'Swoole', 'url' => ['/site/about']],
+                ['label' => 'Linux', 'url' => ['/site/about']],
+                ['label' => 'MySQL', 'url' => ['/site/contact']],
+                ['label' => '数据分析', 'url' => ['/site/contact']],
+                ['label' => 'Hadoop', 'url' => ['/site/contact']],
+                ['label' => '关于我', 'url' => ['/site/contact']],
             ];
-            if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-            } else {
-                $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ];
-            }
+//            if (Yii::$app->user->isGuest) {
+//                $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+//                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+//            } else {
+//                $menuItems[] = [
+//                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+//                    'url' => ['/site/logout'],
+//                    'linkOptions' => ['data-method' => 'post']
+//                ];
+//            }
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
@@ -65,8 +70,8 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-left">Copyright  &copy; 2009-2016 loadata.com</p>
+        <p class="pull-right"><?= Yii::powered() ?> 粤ICP备15101512号</p>
         </div>
     </footer>
 

@@ -8,6 +8,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\base\InvalidParamException;
+use yii\data\ArrayDataProvider;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -67,7 +68,17 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $dataProvider = new ArrayDataProvider([
+            'allModels'=>[
+                ['title'=>'LAMP环境搭建'],
+                ['title'=>'大数据时代'],
+                ['title'=>'如果那么，那么~~~~~~~~~'],
+                ['title'=>'LAMP环境搭建'],
+                ['title'=>'大数据时代'],
+                ['title'=>'如果那么，那么~~~~~~~~~'],
+            ]
+        ]);
+        return $this->render('index',['dataProvider'=>$dataProvider]);
     }
 
     public function actionLogin()
