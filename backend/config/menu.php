@@ -23,7 +23,14 @@ return [
                 ]],
             ]
         ],
-
+        'blog'=> ['label'=>'博客管理', 'items'=>[
+                ['icon'=>'glyphicon glyphicon-user','label' => '文章管理','items' => [
+                    ['label' => '文章列表', 'url' => ['/blog/article']],
+                    ['label' => '分类列表', 'url' => ['/blog/type']],
+                    ['label' => '标签列表', 'url' => ['/blog/tag']],
+                ]]
+            ]
+        ],
         'setting'=> ['label'=>'系统设置', 'items'=>[
                 ['icon'=>'glyphicon glyphicon-user','label' => '权限管理','items' => [
                     ['label' => '用户管理', 'url' => ['/setting/user']],

@@ -15,6 +15,29 @@ $this->registerJs('
 ');
 ?>
 <div class="container">
+    <?php echo \yii\helpers\Markdown::process('
+```php
+<?php
+function function_name() {
+    echo "hello world";
+}
+// traditional markdown and parse full text
+$parser = new \cebe\markdown\Markdown();
+$parser->parse($markdown);
+
+// use github markdown
+$parser = new \cebe\markdown\GithubMarkdown();
+$parser->parse($markdown);
+
+// use markdown extra
+$parser = new \cebe\markdown\MarkdownExtra();
+$parser->parse($markdown);
+
+// parse only inline elements (useful for one-line descriptions)
+$parser = new \cebe\markdown\GithubMarkdown();
+$parser->parseParagraph($markdown);
+```
+        ','gfm')?>
     <div class="jumbotron">
         <h1><?=Yii::$app->user->identity->username?>，欢迎使用数据分析平台!</h1>
     </div>

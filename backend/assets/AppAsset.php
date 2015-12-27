@@ -24,7 +24,8 @@ class AppAsset extends AssetBundle
         'css/site.css',
         'css/menu.css',
         'css/style.css',
-        'js/icheck/skins/square/grey.css'
+        'js/icheck/skins/square/grey.css',
+        'js/highlight/styles/monokai.css'
     ];
     public $js = [
         'js/metismenu/dist/metisMenu.js',
@@ -33,7 +34,8 @@ class AppAsset extends AssetBundle
         'js/app.js',
         'js/icheck/icheck.js',
         'js/highcharts/js/highcharts.js',
-        'js/highcharts/js/modules/exporting.js'
+        'js/highcharts/js/modules/exporting.js',
+        'js/highlight/highlight.pack.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

@@ -25,4 +25,5 @@ $(function(){
         else
             hand.removeClass("glyphicon glyphicon-chevron-down").addClass('glyphicon glyphicon-chevron-up');
     });
+    hljs.initHighlightingOnLoad();
 });

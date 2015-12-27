@@ -106,3 +106,7 @@ a.desc:after {
     background: #222;
     height: 100%;
 }
+
+pre{
+    background-color: #23241F;
+}

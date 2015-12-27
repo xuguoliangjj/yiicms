@@ -19,6 +19,9 @@ return [
         'main' => [
             'class' => 'backend\modules\main\mainModule',
         ],
+        'blog' => [
+            'class' => 'backend\modules\blog\blogModule',
+        ],
     ],
     'components' => [
         'user' => [
